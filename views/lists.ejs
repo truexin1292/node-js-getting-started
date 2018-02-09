@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>List</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+<h1><%= title %></h1>
+<form action="/lists" method="POST">
+    <input type="text" name="content"/>
+    <input type="submit" value="新增"/>
+</form>
+<ul>
+    <% for(var i = 0; i < lists.length; i++) { %>
+    <li>
+        <%= lists[i].get('content') %>
+        <form action="/delete" method="POST">
+            <input type="text" name="objectId" hidden value=<%= lists[i].get('objectId') %> />
+            <input type="submit" value="删除"/>
+        </form>
+    </li>
+    <% } %>
+</ul>
+</body>
+</html>
