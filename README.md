@@ -24,6 +24,7 @@ npm install
 ```
 lean login
 lean switch
+app
 ```
 
 启动项目：

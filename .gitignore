@@ -3,7 +3,9 @@ npm-debug.log
 start.sh
 .avoscloud
 .leancloud
+.idea/
 
 # VIM
 *~
 *.swp
+yarn.lock

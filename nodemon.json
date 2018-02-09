@@ -1,3 +1,6 @@
 {
-  "ignore": ["views/*", "public/*"]
+    "ignore": [
+        "views/*",
+        "public/*"
+    ]
 }
