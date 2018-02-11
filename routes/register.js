@@ -3,24 +3,10 @@ var router = require('express').Router();
 var AV = require('leanengine');
 var user = new AV.User();
 
-var Register = AV.Object.extend('Register');
-
-// 查询 login 列表
+// 渲染register页面
 router.get('/',
     (req, res, next) => {
-        var query = new AV.Query(Register);
-        query.find().then(
-            (results) => {
-                res.render('register', {});
-            },
-            (err) => {
-                if (err.code === 101) {
-                    res.render('register', {});
-                } else {
-                    next(err);
-                }
-            }
-        ).catch(next);
+        res.render('register', { title: '注册', btnTxt: '注册' });
     }
 );
 
@@ -42,8 +28,14 @@ router.post('/',
                 // 注册成功，跳转到商品 list 页面
                 res.redirect('/login');
             },
-            (err) => {
-                next(err);
+            (error) => {
+                // res.redirect('/error');
+                // res.render('error', {
+                //     message: error.message,
+                //     error: error
+                // });
+                next(error);
+                // alert(JSON.stringify(error));
             }
         );
 

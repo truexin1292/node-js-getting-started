@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-<h1>login</h1>
+<h1><%= title %></h1>
 <form action="/login" method="POST" class="login-form">
     账号名称：<input type="text" name="name" placeholder="请输入姓名"/>
     <br>
@@ -13,7 +13,10 @@
     登录密码：<input type="password" name="password" placeholder="请输入密码"/>
     <br>
     <br>
-    <input type="submit" value="登录"/>
+    <input type="submit" value=<%= btnTxt %> />
+    <br>
+    <br>
+    <a href="/register">还没有账号？去注册</a>
 </form>
 </body>
 </html>

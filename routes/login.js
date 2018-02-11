@@ -4,22 +4,10 @@ var AV = require('leanengine');
 
 var Login = AV.Object.extend('Login');
 
-// 查询 login 列表
+//渲染login页面
 router.get('/',
     (req, res, next) => {
-        var query = new AV.Query(Login);
-        query.find().then(
-            (results) => {
-                res.render('login', {});
-            },
-            (err) => {
-                if (err.code === 101) {
-                    res.render('login', {});
-                } else {
-                    next(err);
-                }
-            }
-        ).catch(next);
+        res.render('login', { title: '登录', btnTxt: '登录' });
     }
 );
 
@@ -34,8 +22,12 @@ router.post('/',
                 // 登录成功，跳转到商品 list 页面
                 res.redirect('/lists');
             },
-            (err) => {
-                next(err);
+            (error) => {
+                // res.render('error', {
+                //     message: error.message,
+                //     error
+                // });
+                next(error);
             }
         );
     }
