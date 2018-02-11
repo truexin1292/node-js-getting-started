@@ -18,6 +18,7 @@
         "leanengine": "^3.0.0"
     },
     "devDependencies": {
+        "babel-preset-env": "^1.6.1",
         "nodemon": "^1.11.0"
     },
     "engines": {

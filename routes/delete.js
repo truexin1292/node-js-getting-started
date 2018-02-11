@@ -2,9 +2,7 @@
 var router = require('express').Router();
 var AV = require('leanengine');
 
-var List = AV.Object.extend('List');
-
-// 新增 List 项目
+// 删除 List 项
 router.post('/',
     (req, res, next) => {
         var objectId = req.body.objectId;
@@ -15,9 +13,8 @@ router.post('/',
             },
             (error) => {
                 // 异常处理
-                console.log('error', error);
                 res.render('lists', {
-                    title: 'List 列表errors',
+                    title: 'LIST OF ERRORS',
                     lists: []
                 });
             }

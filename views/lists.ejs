@@ -14,7 +14,7 @@
     <% for(var i = 0; i < lists.length; i++) { %>
     <li>
         <%= lists[i].get('content') %>
-        <form action="/delete" method="POST">
+        <form action="/delete" method="POST" class="inline-form">
             <input type="text" name="objectId" hidden value=<%= lists[i].get('objectId') %> />
             <input type="submit" value="删除"/>
         </form>
