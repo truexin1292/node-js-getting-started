@@ -6,7 +6,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var AV = require('leanengine');
-var { format } = require("./util/tool");
 
 // 加载云函数定义，你可以将云函数拆分到多个文件方便管理，但需要在主文件中加载它们
 require('./cloud');
@@ -54,6 +53,7 @@ app.use('/lists', require('./routes/lists'));
 app.use('/delete', require('./routes/delete'));
 app.use('/login', require('./routes/login'));
 app.use('/register', require('./routes/register'));
+app.use('/logout', require('./routes/logout'));
 
 app.use(function (req, res, next) {
     // 如果任何一个路由都没有返回响应，则抛出一个 404 异常给后续的异常处理器

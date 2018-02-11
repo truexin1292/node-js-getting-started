@@ -15,11 +15,15 @@
     <li>
         <%= lists[i].get('content') %>
         <form action="/delete" method="POST" class="inline-form">
-            <input type="text" name="objectId" hidden value=<%= lists[i].get('objectId') %> />
+            <input type="text" name="objectId" hidden value=<%= lists[i].get('objectId') %>/>
             <input type="submit" value="删除"/>
         </form>
     </li>
     <% } %>
+
+    <form action="/logout" method="POST">
+        <input type="submit" value="退出"/>
+    </form>
 </ul>
 </body>
 </html>
