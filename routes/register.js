@@ -13,12 +13,12 @@ router.get('/',
 // 注册
 router.post('/',
     (req, res, next) => {
-        var name = req.body.name;
+        var username = req.body.username;
         var password = req.body.password;
         var email = req.body.email;
         var phone = req.body.phone;
 
-        user.setUsername(name);
+        user.setUsername(username);
         user.setPassword(password);
         user.setEmail(email);
         user.setMobilePhoneNumber(phone);
